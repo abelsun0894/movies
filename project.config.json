@@ -1,0 +1,10 @@
+{
+	"miniprogramRoot": "./client",
+	"qcloudRoot": "./server",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "wx0087efcea2eeffa1",
+	"projectname": "movies",
+	"condition": {}
+}
