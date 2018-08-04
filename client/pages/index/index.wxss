@@ -1,1 +1,60 @@
 /* pages/index/index.wxss */
+page{
+}
+.wrapper{
+  text-align: center;
+  padding: 50rpx 0;
+}
+
+.hot-img{
+  height: 700rpx;
+}
+
+.title{
+  margin: 40rpx 0;
+  font-size: 60rpx;
+  line-height: 84rpx;
+}
+
+.comment-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-img{
+  margin-right: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.content{
+  font-size: 40rpx;
+  line-height: 56rpx;
+}
+
+.btn-wrapper{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 150rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.hot-btn{
+  display: flex;
+  flex: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.hot-btn-img{
+  height: 50rpx;
+  width: 50rpx;
+}
