@@ -5,7 +5,7 @@
 
 .movie-wrapper{
   display: flex;
-  margin-top: 30rpx;
+  margin-top: 50rpx;
   width: 650rpx;
   height: 400rpx;
   background: white;
