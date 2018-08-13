@@ -1,1 +1,17 @@
 /* pages/hot/hot.wxss */
+.wrapper{
+  text-align: center;
+}
+
+.movie-wrapper{
+  display: flex;
+  margin-top: 30rpx;
+  width: 650rpx;
+  height: 400rpx;
+  background: white;
+}
+
+.img{
+  width: 270rpx;
+  height: 400rpx;
+}

@@ -9,11 +9,11 @@
 </view>
 <view class='btn-wrapper'>
   <view class='hot-btn'>
-    <image class='hot-btn-img' src='../../images/user-sel.png'></image>
+    <image class='hot-btn-img' src='../../images/hot.png'></image>
     <view>热门</view>
   </view>
   <view class='hot-btn'>
-    <image class='hot-btn-img' src='../../images/user-sel.png'></image>
+    <image class='hot-btn-img' src='../../images/my.png'></image>
     <view>我的</view>
   </view>
 </view>

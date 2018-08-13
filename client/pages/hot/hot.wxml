@@ -1,2 +1,10 @@
 <!--pages/hot/hot.wxml-->
-<text>pages/hot/hot.wxml</text>
+<view class='wrapper'>
+  <view class='movie-wrapper'>
+    <image class='img' src='../../images/p1461851991.jpg' mode='aspectFit'></image>
+    <view class='text-wrapper'>
+      <view class='title'></view>
+      <view class='type'></view>
+    </view>
+  </view>
+</view>
