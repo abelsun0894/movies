@@ -5,13 +5,31 @@
 
 .movie-wrapper{
   display: flex;
-  margin-top: 50rpx;
+  justify-content: flex-start;
+  margin: 50rpx auto 0;
   width: 650rpx;
-  height: 400rpx;
+  height: 280rpx;
   background: white;
 }
 
 .img{
-  width: 270rpx;
-  height: 400rpx;
+  width: 200rpx;
+  height: 100%;
+}
+
+.title{
+  margin: 60rpx 30rpx;
+  font-size: 38rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+  text-align: left;
+  opacity: 0.9;
+}
+
+.type{
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  text-align: left;
+  opacity: 0.8;
 }
