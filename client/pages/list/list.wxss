@@ -1,1 +1,38 @@
 /* pages/list/list.wxss */
+.wrapper{
+  height: 250rpx;
+  width: 100%;
+  border: 1rpx solid rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.wrapper:first-child{
+  margin-top: 50rpx;
+}
+
+.user-wrapper{
+  display: flex;
+  align-items: center;
+  margin: 40rpx 80rpx 30rpx;
+}
+
+.icon{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: sandybrown;
+  margin-right: 30rpx;
+}
+
+.name{
+  font-size: 40rpx;
+  line-height: 56rpx;
+  opacity: 0.7;
+}
+
+.content{
+  margin: 0 100rpx;
+  font-size: 35rpx;
+  line-height: 49rpx;
+  opacity: 0.8;
+}

@@ -1,2 +1,8 @@
 <!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<view class='wrapper' wx:for="{{[0,1,2,3]}}">
+  <view class='user-wrapper'>
+    <image class='icon' src='../../images/user-sel.png'></image>
+    <view class='name'>培松</view>
+  </view>
+  <view class='content'>这里是评论内容！！</view>
+</view>
