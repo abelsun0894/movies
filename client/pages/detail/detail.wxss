@@ -1,1 +1,14 @@
 /* pages/detail/detail.wxss */
+.img{
+  margin: 50rpx auto 0;
+  position: absolute;
+  width: 250rpx;
+  height: 350rpx;
+}
+
+.wrapper{
+  position: absolute;
+  margin: 100rpx 30rpx 50rpx;
+  border: 3rpx solid rgba(0, 0, 0, 0.5);
+  border-radius: 20rpx;
+}

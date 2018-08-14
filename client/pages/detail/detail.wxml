@@ -1,2 +1,16 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<image class='img' src='../../images/p2517753454.jpg'></image>
+<view class='wrapper'>
+  <view class='title'>复仇者联盟3：无限战争</view>
+  <text class='content'></text>
+  <view btn-wrapper>
+    <navigator class='btn'>
+      <image class='icon' src='../../images/user-sel.png'></image>
+      <view>查看影评</view>
+    </navigator>
+    <navigator class='btn'>
+      <image class='icon' src='../../images/user-sel.png'></image>
+      <view>添加影评</view>
+    </navigator>
+  </view>
+</view>
