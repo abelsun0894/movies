@@ -1,9 +1,11 @@
 <!--pages/detail/detail.wxml-->
-<image class='img' src='../../images/p2517753454.jpg'></image>
 <view class='wrapper'>
+  <image class='img' src='../../images/p2517753454.jpg'></image>
   <view class='title'>复仇者联盟3：无限战争</view>
-  <text class='content'></text>
-  <view btn-wrapper>
+  <scroll-view class='scroll' scroll-y>
+    <view class='content'>复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争</view>
+  </scroll-view>
+  <view class='btn-wrapper'>
     <navigator class='btn'>
       <image class='icon' src='../../images/user-sel.png'></image>
       <view>查看影评</view>
