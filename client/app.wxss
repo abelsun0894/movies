@@ -11,7 +11,7 @@ page{
   height: 350rpx;
 }
 
-.wrapper{
+.content-wrapper{
   position: relative;
   margin: 100rpx auto 50rpx;
   background: white;
