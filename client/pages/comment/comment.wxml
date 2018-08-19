@@ -1,2 +1,12 @@
 <!--pages/comment/comment.wxml-->
-<text>pages/comment/comment.wxml</text>
+<view class='content-wrapper'>
+  <image class='img-small' src='../../images/p2517753454.jpg'></image>
+  <view class='title'>复仇者联盟3:无限战争</view>
+  <view class='user-wrapper'>
+    <image class='user-icon' src='../../images/user-sel.png'></image>
+    <view class='name'>徐妍的影评</view>
+  </view>
+  <scroll-view class='scroll' scroll-y>
+    <view class='literal-content'>复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争</view>
+  </scroll-view>
+</view>

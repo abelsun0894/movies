@@ -1,1 +1,44 @@
 /* pages/comment/comment.wxss */
+
+.title{
+  margin: 260rpx 0 0rpx;
+  font-size: 35rpx;
+  line-height: 42rpx;
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+.user-wrapper{
+  margin-left: 50rpx;
+  height: 150rpx;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-icon{
+  margin-right: 30rpx;
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  background: springgreen;
+}
+
+.name{
+  font-size: 40rpx;
+  line-height: 56rpx;
+  opacity: 0.9;
+}
+
+.scroll{
+  text-align: left;
+  height: 600rpx;
+}
+
+.literal-content{
+  margin: 0 50rpx 100rpx 200rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.8;
+}
