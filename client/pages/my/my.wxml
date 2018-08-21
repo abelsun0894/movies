@@ -1,2 +1,13 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class='specification'>收藏的影评</view>
+<view class='wrapper'>
+  <view class='movie-wrapper'>
+    <image class='img' src='../../images/p2517753454.jpg' mode='aspectFit'></image>
+    <view class='text-wrapper'>
+      <view class='title'>复仇者联盟3:无限战争</view>
+      <view class='type'>类型：动作/科幻/冒险</view>
+    </view>
+  </view>
+</view>
+
+

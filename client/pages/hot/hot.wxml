@@ -1,10 +1,10 @@
 <!--pages/hot/hot.wxml-->
-<view class='wrapper'>
-  <view class='movie-wrapper'>
-    <image class='img' src='../../images/p2517753454.jpg' mode='aspectFit'></image>
-    <view class='text-wrapper'>
-      <view class='title'>复仇者联盟3:无限战争</view>
-      <view class='type'>类型：动作/科幻/冒险</view>
+<view class='hot-wrapper'>
+  <view class='hot-movie-wrapper'>
+    <image class='hot-img' src='../../images/p2517753454.jpg' mode='aspectFit'></image>
+    <view class='hot-text-wrapper'>
+      <view class='hot-title'>复仇者联盟3:无限战争</view>
+      <view class='hot-type'>类型：动作/科幻/冒险</view>
     </view>
   </view>
 </view>
