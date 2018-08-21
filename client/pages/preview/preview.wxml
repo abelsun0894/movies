@@ -1,2 +1,24 @@
 <!--pages/preview/preview.wxml-->
-<text>pages/preview/preview.wxml</text>
+<view class='content-wrapper'>
+  <image class='img-small' src='../../images/p2517753454.jpg'></image>
+  <view class='title'>复仇者联盟3:无限战争</view>
+  <view class='user-wrapper'>
+    <image class='user-icon' src='../../images/user-sel.png'></image>
+    <view class='name'>小黄蜂的影评</view>
+  </view>
+  <scroll-view scroll-y>
+    <view class='text-wrapper'>
+      <text>复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争</text>
+    </view>
+  </scroll-view>
+  <view class='btn-wrapper'>
+    <view class='btn'>
+      <image class='btn-icon' src='../../images/user-sel.png'></image>
+      <view>重新编辑</view>
+    </view>
+    <view class='btn'>
+      <image class='btn-icon' src='../../images/user-sel.png'></image>
+      <view>发布影评</view>
+    </view>
+  </view>
+</view>

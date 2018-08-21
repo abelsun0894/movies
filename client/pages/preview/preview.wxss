@@ -1,1 +1,41 @@
 /* pages/preview/preview.wxss */
+
+.title{
+  margin: 260rpx 0 0rpx;
+  font-size: 35rpx;
+  line-height: 42rpx;
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+.user-wrapper{
+  margin-left: 50rpx;
+  height: 150rpx;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-icon{
+  margin-right: 30rpx;
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  background: springgreen;
+}
+
+.name{
+  font-size: 40rpx;
+  line-height: 56rpx;
+  opacity: 0.9;
+}
+
+.text-wrapper{
+  margin: 50rpx 50rpx 0 200rpx;
+  height: 300rpx;
+  text-align: left;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.8;
+}

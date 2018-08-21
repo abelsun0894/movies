@@ -33,7 +33,7 @@
 
 .scroll{
   text-align: left;
-  height: 600rpx;
+  height: 400rpx;
 }
 
 .literal-content{

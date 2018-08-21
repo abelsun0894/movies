@@ -9,4 +9,14 @@
   <scroll-view class='scroll' scroll-y>
     <view class='literal-content'>复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争</view>
   </scroll-view>
+  <view class='btn-wrapper'>
+    <view class='btn'>
+      <image class='btn-icon' src='../../images/user-sel.png'></image>
+      <view>收藏影评</view>
+    </view>
+    <view class='btn'>
+      <image class='btn-icon' src='../../images/user-sel.png'></image>
+      <view>写影评</view>
+    </view>
+  </view>
 </view>
