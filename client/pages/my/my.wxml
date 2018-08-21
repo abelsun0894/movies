@@ -1,13 +1,18 @@
 <!--pages/my/my.wxml-->
 <view class='specification'>收藏的影评</view>
-<view class='wrapper'>
-  <view class='movie-wrapper'>
-    <image class='img' src='../../images/p2517753454.jpg' mode='aspectFit'></image>
-    <view class='text-wrapper'>
-      <view class='title'>复仇者联盟3:无限战争</view>
-      <view class='type'>类型：动作/科幻/冒险</view>
+<view class='hot-wrapper'>
+  <view class='hot-movie-wrapper'>
+    <image class='hot-img' src='../../images/p2517753454.jpg' mode='aspectFit'></image>
+    <view class='hot-text-wrapper'>
+      <view class='hot-title'>复仇者联盟3:无限战争</view>
+      <view class='hot-type'>这里是影评摘要</view>
+      <view class='user-wrapper'>
+        <image class='user-icon' src='../../images/user-sel.png'></image>
+        <view class='user-name'>徐妍</view>
+      </view>
     </view>
   </view>
 </view>
+<navigator class='btn-index'>回到首页</navigator>
 
 
