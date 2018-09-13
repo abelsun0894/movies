@@ -8,6 +8,7 @@ page{
 
 .hot-img{
   height: 700rpx;
+  width: 600rpx;
 }
 
 .title{
