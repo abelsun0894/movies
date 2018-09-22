@@ -1,7 +1,7 @@
 <!--pages/index/index.wxml-->
 <view class='wrapper'>
-  <image class='hot-img' src='https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/p2517753454.jpg' mode='aspectFit'></image>
-  <view class='title'>复仇者联盟3:无限战争</view>
+  <image class='hot-img' src='{{movieInfo.image}}' mode='aspectFit'></image>
+  <view class='title'>{{movieInfo.title}}</view>
   <view class='comment-wrapper'>
     <image class='comment-img' src='../../images/user-sel.png'></image>
     <view class='content'>徐妍给你推荐了一部电影</view>

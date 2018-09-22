@@ -21,7 +21,10 @@ var config = {
         tunnelUrl: `${host}/weapp/tunnel`,
 
         // 上传图片接口
-        uploadUrl: `${host}/weapp/upload`
+        uploadUrl: `${host}/weapp/upload`,
+
+        //首页获取热门电影
+        indexFilmUrl: `${host}/weapp/indexFilm`
     }
 };
 

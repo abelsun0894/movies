@@ -1,7 +1,11 @@
 {
-	"miniprogramRoot": "./client",
-	"qcloudRoot": "./server",
+	"miniprogramRoot": "client/",
+	"qcloudRoot": "server/",
 	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
 		"newFeature": true
 	},
 	"appid": "wx0087efcea2eeffa1",
