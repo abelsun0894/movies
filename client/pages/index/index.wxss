@@ -53,6 +53,7 @@ page{
 }
 
 .hot-btn{
+  height: 100%;
   display: flex;
   flex: auto;
   justify-content: center;

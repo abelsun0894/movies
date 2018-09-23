@@ -1,10 +1,10 @@
 <!--pages/hot/hot.wxml-->
 <view class='hot-wrapper'>
-  <view class='hot-movie-wrapper'>
-    <image class='hot-img' src='../../images/p2517753454.jpg' mode='aspectFit'></image>
+  <navigator class='hot-movie-wrapper' wx:for="{{moviesInfo}}" wx:key="id" url='../detail/detail'>
+    <image class='hot-img' src="{{item.image}}" mode='aspectFit'></image>
     <view class='hot-text-wrapper'>
-      <view class='hot-title'>复仇者联盟3:无限战争</view>
-      <view class='hot-type'>类型：动作/科幻/冒险</view>
+      <view class='hot-title'>{{item.title}}</view>
+      <view class='hot-type'>类型：{{item.category}}</view>
     </view>
-  </view>
+  </navigator>
 </view>

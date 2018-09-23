@@ -8,13 +8,13 @@
   </view>
 </view>
 <view class='btn-wrapper'>
-  <view class='hot-btn'>
+  <navigator class='hot-btn' url='../hot/hot'>
     <image class='hot-btn-img' src='../../images/hot.png'></image>
     <view>热门</view>
-  </view>
-  <view class='hot-btn'>
+  </navigator>
+  <navigator class='hot-btn' url='../my/my'>
     <image class='hot-btn-img' src='../../images/my.png'></image>
     <view>我的</view>
-  </view>
+  </navigator>
 </view>
 

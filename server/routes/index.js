@@ -35,4 +35,7 @@ router.post('/message', controllers.message.post)
 //获取首页随机热门电影
 router.get('/indexFilm',controllers.indexFilm.get),
 
+//获取所有电影信息
+router.get('/moviesInfo', controllers.moviesInfo.get)
+
 module.exports = router

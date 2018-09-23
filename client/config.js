@@ -24,7 +24,10 @@ var config = {
         uploadUrl: `${host}/weapp/upload`,
 
         //首页获取热门电影
-        indexFilmUrl: `${host}/weapp/indexFilm`
+        indexFilmUrl: `${host}/weapp/indexFilm`,
+
+        //获取所有电影信息
+        moviesInfoUrl: `${host}/weapp/moviesInfo`,
     }
 };
 

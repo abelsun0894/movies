@@ -1,18 +1,37 @@
 // pages/hot/hot.js
+
+const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
+const config = require('../../config.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    moviesInfo: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    //获取所有影片信息
+    this.getMoviesInfo()
+  },
+
+  //获取所有影片信息
+  getMoviesInfo(){
+    qcloud.request({
+      url: config.service.moviesInfoUrl,
+      success: res => {
+        let data = res.data.data
+        console.log(data)
+        this.setData({
+          moviesInfo: data
+        })
+      }
+    })
   },
 
   /**
