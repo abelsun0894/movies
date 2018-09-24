@@ -2,6 +2,7 @@
 
 const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
 const config = require('../../config.js')
+const app = getApp()
 
 Page({
 
@@ -32,6 +33,18 @@ Page({
         })
       }
     })
+  },
+
+  onTapMovie(option){
+    console.log(option)
+    let id = option.currentTarget.id
+    let tempMoviesInfo = this.data.moviesInfo
+    tempMoviesInfo.forEach((element) => {
+      if(element.id == id){
+        app.movieInfo = element
+      }
+    })
+    console.log(app.movieInfo)
   },
 
   /**

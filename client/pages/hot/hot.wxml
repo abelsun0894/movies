@@ -1,6 +1,6 @@
 <!--pages/hot/hot.wxml-->
 <view class='hot-wrapper'>
-  <navigator class='hot-movie-wrapper' wx:for="{{moviesInfo}}" wx:key="id" url='../detail/detail'>
+  <navigator class='hot-movie-wrapper' wx:for="{{moviesInfo}}" wx:key="id" url='../detail/detail' bindtap='onTapMovie' id='{{item.id}}'>
     <image class='hot-img' src="{{item.image}}" mode='aspectFit'></image>
     <view class='hot-text-wrapper'>
       <view class='hot-title'>{{item.title}}</view>

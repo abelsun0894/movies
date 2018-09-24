@@ -1,9 +1,9 @@
 <!--pages/detail/detail.wxml-->
 <view class='content-wrapper'>
-  <image class='img-big' src='../../images/p2517753454.jpg'></image>
-  <view class='title-big'>复仇者联盟3：无限战争</view>
+  <image class='img-big' src='{{movieInfo.image}}'></image>
+  <view class='title-big'>{{movieInfo.title}}</view>
   <scroll-view class='scroll' scroll-y>
-    <view class='content'>复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争复仇者联盟3：无限战争</view>
+    <view class='content'>{{movieInfo.description}}</view>
   </scroll-view>
   <view class='btn-wrapper'>
     <navigator class='btn'>

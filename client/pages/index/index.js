@@ -1,6 +1,7 @@
 // pages/index/index.js
 const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
 const config = require('../../config.js')
+const app = getApp()
 Page({
 
   /**
@@ -27,6 +28,8 @@ Page({
         this.setData({
           movieInfo: res.data.data
         })
+        //当前电影信息设置为app.currentMovie
+        app.movieInfo = res.data.data
         console.log(this.data.movieInfo)
       },
       fail: res => {
