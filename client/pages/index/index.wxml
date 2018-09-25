@@ -1,11 +1,13 @@
 <!--pages/index/index.wxml-->
 <view class='wrapper'>
-  <image class='hot-img' src='{{movieInfo.image}}' mode='aspectFit'></image>
+  <view bindtap='onTapImage'>
+      <image class='hot-img' src='{{movieInfo.image}}' mode='aspectFit'></image>
+  </view>
   <view class='title'>{{movieInfo.title}}</view>
-  <view class='comment-wrapper'>
+  <navigator class='comment-wrapper' url='../comment/comment'>
     <image class='comment-img' src='../../images/user-sel.png'></image>
     <view class='content'>徐妍给你推荐了一部电影</view>
-  </view>
+  </navigator>
 </view>
 <view class='btn-wrapper'>
   <navigator class='hot-btn' url='../hot/hot'>

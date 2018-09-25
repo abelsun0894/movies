@@ -19,6 +19,11 @@ Page({
     })
   },
 
+  //响应点击“添加影评”
+  onTapAddComment(){
+    app.addComment()
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -6,13 +6,13 @@
     <view class='content'>{{movieInfo.description}}</view>
   </scroll-view>
   <view class='btn-wrapper'>
-    <navigator class='btn'>
+    <navigator class='btn' url='../list/list'>
       <image class='btn-icon' src='../../images/user-sel.png'></image>
       <view>查看影评</view>
     </navigator>
-    <navigator class='btn'>
+    <view class='btn' bindtap='onTapAddComment'>
       <image class='btn-icon' src='../../images/user-sel.png'></image>
       <view>添加影评</view>
-    </navigator>
+    </view>
   </view>
 </view>

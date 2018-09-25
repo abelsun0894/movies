@@ -7,5 +7,19 @@ var movieInfo
 App({
     onLaunch: function () {
         qcloud.setLoginUrl(config.service.loginUrl)
-    }
+    },
+  //“写影评”
+  addComment() {
+    wx.showActionSheet({
+      itemList: ["文字", "音频"],
+      success: res => {
+        console.log(res)
+        if (res.tapIndex === 0) {
+          wx.navigateTo({
+            url: '../edit/edit',
+          })
+        }
+      }
+    })
+  }
 })
