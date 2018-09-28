@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    movieInfo: null
+    movieInfo: null,
   },
 
   /**
@@ -20,10 +20,15 @@ Page({
   },
 
   //响应点击“完成”
-  onTapBtn(){
-    wx.navigateTo({
-      url: '../preview/preview',
-    })
+  onTapBtn(event) {
+    let comment = event.detail.value.textarea
+    //console.log(comment)
+    if (comment) {
+      app.comment = comment
+      wx.navigateTo({
+        url: '../preview/preview',
+      })
+    }
   },
 
   /**

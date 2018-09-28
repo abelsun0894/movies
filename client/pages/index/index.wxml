@@ -5,8 +5,8 @@
   </view>
   <view class='title'>{{movieInfo.title}}</view>
   <navigator class='comment-wrapper' url='../comment/comment'>
-    <image class='comment-img' src='../../images/user-sel.png'></image>
-    <view class='content'>徐妍给你推荐了一部电影</view>
+    <image class='comment-img' src='{{logoUrl}}'></image>
+    <view class='content'>{{comment}}</view>
   </navigator>
 </view>
 <view class='btn-wrapper'>

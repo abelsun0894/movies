@@ -3,6 +3,7 @@ var qcloud = require('./vendor/wafer2-client-sdk/index')
 var config = require('./config')
 
 var movieInfo
+var comments
 
 App({
     onLaunch: function () {

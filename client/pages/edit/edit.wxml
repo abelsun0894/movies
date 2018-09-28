@@ -1,11 +1,13 @@
 <!--pages/edit/edit.wxml-->
-<view class='content-wrapper'>
-  <image class='img-big' src='{{movieInfo.image}}'></image>
-  <view class='title-big'>{{movieInfo.title}}</view>
-  <textarea class='textarea' placeholder='输入你的影评内容...' ></textarea>
-  <view class='btn'>
-    <image class='btn-icon' src='../../images/user-sel.png'></image>
-    <view class='record'>录音</view>
+<form bindsubmit='onTapBtn'>
+  <view class='content-wrapper'>
+    <image class='img-big' src='{{movieInfo.image}}'></image>
+    <view class='title-big'>{{movieInfo.title}}</view>
+    <textarea class='textarea' placeholder='输入你的影评内容...' name='textarea'></textarea>
+    <view class='btn'>
+      <image class='btn-icon' src='../../images/user-sel.png'></image>
+      <view class='record'>录音</view>
+    </view>
   </view>
-</view>
-<button class='btn-complete' type='primary' bindtap='onTapBtn'>完成</button>
+  <button class='btn-complete' type='primary' form-type='submit'>完成</button>
+</form>

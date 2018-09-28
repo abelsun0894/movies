@@ -8,29 +8,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    movieInfo: null
+    movieInfo: null,
+    comment: null,
+    logoUrl: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //连接数据库获取随机电影信息
+    //连接数据库获取随机电影信息和影评信息
     this.getRandomMovieInfo()
   },
 
-  //获取随机电影信息
+  //获取随机电影信息和影评信息
   getRandomMovieInfo(){
     qcloud.request({
       url: config.service.indexFilmUrl,
       success: res => {
-        //console.log(res)
+        console.log(res)
         this.setData({
-          movieInfo: res.data.data
+          movieInfo: res.data.data[0]
         })
-        //当前电影信息设置为app.currentMovie
-        app.movieInfo = res.data.data
+        //当前电影信息设置为app.movieInfo
+        app.movieInfo = res.data.data[0]
         console.log(this.data.movieInfo)
+        //获取评论设置app.comments&this.data.comment
+        if(res.data.data[1].length){
+          app.comments = res.data.data[1]
+          this.setData({
+            comment: res.data.data[1][0].nickname + '给你推荐了一部电影',
+            logoUrl: res.data.data[1][0].logo_url
+          })
+        }else{
+          this.setData({
+            comment: '暂无评论。'
+          })
+        }
       },
       fail: res => {
         console.log(res)

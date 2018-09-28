@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    movieInfo: null
+    movieInfo: null,
+    comment: null
   },
 
   /**
@@ -15,7 +16,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      movieInfo: app.movieInfo
+      movieInfo: app.movieInfo,
+      comment: app.comment
     })
   },
 
