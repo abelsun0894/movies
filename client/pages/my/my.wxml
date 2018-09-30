@@ -13,6 +13,6 @@
     </view>
   </view>
 </view>
-<navigator class='btn-index'>回到首页</navigator>
+<navigator class='btn-index' open-type='redirect' url='../index/index'>回到首页</navigator>
 
 

@@ -3,11 +3,11 @@
   <image class='img-small' src='{{movieInfo.image}}'></image>
   <view class='title'>{{movieInfo.title}}</view>
   <view class='user-wrapper'>
-    <image class='user-icon' src='../../images/user-sel.png'></image>
-    <view class='name'>徐妍的影评</view>
+    <image class='user-icon' src='{{comment.logo_url}}'></image>
+    <view class='name'>{{comment.nickname}}的影评</view>
   </view>
   <scroll-view class='scroll' scroll-y>
-    <view class='literal-content'>复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争复仇者联盟3:无限战争</view>
+    <view class='literal-content'>{{comment.words}}</view>
   </scroll-view>
   <view class='btn-wrapper'>
     <view class='btn'>

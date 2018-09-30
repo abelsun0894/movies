@@ -1,5 +1,7 @@
 // pages/preview/preview.js
 const app = getApp()
+const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
+const config = require('../../config.js')
 
 Page({
 
@@ -8,16 +10,41 @@ Page({
    */
   data: {
     movieInfo: null,
-    comment: null
+    comment: null,
+    userInfo: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.userInfo)
     this.setData({
       movieInfo: app.movieInfo,
-      comment: app.comment
+      comment: app.comment,
+      userInfo: app.userInfo
+    })
+  },
+
+  onTapSubmit(){
+    qcloud.request({
+      url: config.service.commentUrl,
+      method: 'POST',
+      data: {
+        userInfo: this.data.userInfo,
+        commentType: 0,
+        comment: this.data.comment,
+        movieId: this.data.movieInfo.id
+      },
+      success: res =>{
+        //console.log(res)
+        wx.redirectTo({
+          url: '../list/list',
+        })
+      },
+      fail: res => {
+        console.log('fail',res)
+      }
     })
   },
 

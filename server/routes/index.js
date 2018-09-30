@@ -36,6 +36,9 @@ router.post('/message', controllers.message.post)
 router.get('/indexFilm',controllers.indexFilm.get),
 
 //获取所有电影信息
-router.get('/moviesInfo', controllers.moviesInfo.get)
+router.get('/moviesInfo', controllers.moviesInfo.get),
+
+//上传评论
+router.post('/comment',controllers.comment.post)
 
 module.exports = router

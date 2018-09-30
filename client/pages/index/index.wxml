@@ -4,9 +4,10 @@
       <image class='hot-img' src='{{movieInfo.image}}' mode='aspectFit'></image>
   </view>
   <view class='title'>{{movieInfo.title}}</view>
-  <navigator class='comment-wrapper' url='../comment/comment'>
-    <image class='comment-img' src='{{logoUrl}}'></image>
-    <view class='content'>{{comment}}</view>
+  <view wx:if='{{comments.length==0}}'>暂无评论</view>
+  <navigator class='comment-wrapper' wx:else url='../comment/comment'>
+    <image class='comment-img' src='{{comments[0].logo_url}}'></image>
+    <view class='content'>{{comments[0].nickname}}给你推荐了一部电影</view>
   </navigator>
 </view>
 <view class='btn-wrapper'>

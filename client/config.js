@@ -28,6 +28,9 @@ var config = {
 
         //获取所有电影信息
         moviesInfoUrl: `${host}/weapp/moviesInfo`,
+
+        //发布影评
+        commentUrl: `${host}/weapp/comment`
     }
 };
 

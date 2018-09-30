@@ -3,8 +3,8 @@
   <image class='img-small' src='{{movieInfo.image}}'></image>
   <view class='title'>{{movieInfo.title}}</view>
   <view class='user-wrapper'>
-    <image class='user-icon' src='../../images/user-sel.png'></image>
-    <view class='name'>小黄蜂的影评</view>
+    <image class='user-icon' src='{{userInfo.logoUrl}}'></image>
+    <view class='name'>{{userInfo.nickname}}的影评</view>
   </view>
   <scroll-view scroll-y>
     <view class='text-wrapper'>
@@ -16,7 +16,7 @@
       <image class='btn-icon' src='../../images/user-sel.png'></image>
       <view>重新编辑</view>
     </navigator>
-    <view class='btn'>
+    <view class='btn' bindtap='onTapSubmit'>
       <image class='btn-icon' src='../../images/user-sel.png'></image>
       <view>发布影评</view>
     </view>

@@ -9,8 +9,7 @@ Page({
    */
   data: {
     movieInfo: null,
-    comment: null,
-    logoUrl: null
+    comments: null,
   },
 
   /**
@@ -19,6 +18,9 @@ Page({
   onLoad: function (options) {
     //连接数据库获取随机电影信息和影评信息
     this.getRandomMovieInfo()
+    //模拟用户数据
+    app.userInfo = { "nickname": "瓦伦西", "logoUrl": "https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg", "openId": "dfidfianwebebf" }
+    console.log(app.userInfo)
   },
 
   //获取随机电影信息和影评信息
@@ -34,17 +36,10 @@ Page({
         app.movieInfo = res.data.data[0]
         console.log(this.data.movieInfo)
         //获取评论设置app.comments&this.data.comment
-        if(res.data.data[1].length){
-          app.comments = res.data.data[1]
-          this.setData({
-            comment: res.data.data[1][0].nickname + '给你推荐了一部电影',
-            logoUrl: res.data.data[1][0].logo_url
-          })
-        }else{
-          this.setData({
-            comment: '暂无评论。'
-          })
-        }
+        app.comments = res.data.data[1]
+        this.setData({
+          comments: res.data.data[1],
+        })
       },
       fail: res => {
         console.log(res)
