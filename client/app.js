@@ -5,6 +5,7 @@ var config = require('./config')
 var movieInfo
 var comments
 var userInfo
+var recordInfo
 
 App({
     onLaunch: function () {

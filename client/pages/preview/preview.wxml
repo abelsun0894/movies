@@ -6,11 +6,12 @@
     <image class='user-icon' src='{{userInfo.logoUrl}}'></image>
     <view class='name'>{{userInfo.nickname}}的影评</view>
   </view>
-  <scroll-view scroll-y>
+  <scroll-view scroll-y wx:if="{{commentType==0}}">
     <view class='text-wrapper'>
       <text>{{comment}}</text>
     </view>
   </scroll-view>
+  <view class='btn' style='margin:200rpx auto 150rpx;width:400rpx' wx:else >播放音频{{recordDuration}}s</view>
   <view class='btn-wrapper'>
     <navigator class='btn' open-type='navigateBack'>
       <image class='btn-icon' src='../../images/user-sel.png'></image>

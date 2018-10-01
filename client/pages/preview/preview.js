@@ -11,18 +11,24 @@ Page({
   data: {
     movieInfo: null,
     comment: null,
-    userInfo: null
+    userInfo: null,
+    commentType: null,
+    recordInfo:null,
+    recordDuration: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.userInfo)
+    console.log(app.recordInfo)
     this.setData({
       movieInfo: app.movieInfo,
-      comment: app.comment,
-      userInfo: app.userInfo
+      comment: app.comment || null,
+      userInfo: app.userInfo,
+      commentType: + options.commentType,
+      recordInfo: app.recordInfo || null,
+      recordDuration: Math.trunc(app.recordInfo.duration / 1000)
     })
   },
 

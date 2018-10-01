@@ -1,5 +1,6 @@
 // pages/edit/edit.js
 const app = getApp()
+const recorderManager = wx.getRecorderManager()
 
 Page({
 
@@ -29,9 +30,26 @@ Page({
     if (comment) {
       app.comment = comment
       wx.navigateTo({
-        url: '../preview/preview',
+        url: '../preview/preview?commentType=0',
       })
     }
+  },
+
+  //开始触摸录音键
+  onTouchStart(){
+    recorderManager.onStop(res => {
+      console.log('recorderManager tempFilePath',res)
+      app.recordInfo = res
+      wx.navigateTo({
+        url: '../preview/preview?commentType=1',
+      })
+    })
+    recorderManager.start()
+  },
+
+  //结束触摸录音健
+  onTouchEnd(){
+    recorderManager.stop()
   },
 
   /**
