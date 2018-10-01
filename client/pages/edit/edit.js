@@ -8,14 +8,17 @@ Page({
    */
   data: {
     movieInfo: null,
+    commentType: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('edit onLoad',options)
     this.setData({
-      movieInfo: app.movieInfo
+      movieInfo: app.movieInfo,
+      commentType: + options.commentType
     })
   },
 

@@ -16,12 +16,19 @@ App({
       itemList: ["文字", "音频"],
       success: res => {
         console.log(res)
-        if (res.tapIndex === 0) {
-          wx.navigateTo({
-            url: '../edit/edit',
-          })
-        }
+        wx.navigateTo({
+          url: '../edit/edit?commentType=' + res.tapIndex,
+        })
       }
     })
+  },
+
+  //录音
+  record(){
+    let recordManager = wx.getRecorderManager()
+    recordManager.onStop(res => {
+      console.log(res)
+    })
+    recordManager.start()
   }
 })

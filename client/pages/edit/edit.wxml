@@ -3,8 +3,8 @@
   <view class='content-wrapper'>
     <image class='img-big' src='{{movieInfo.image}}'></image>
     <view class='title-big'>{{movieInfo.title}}</view>
-    <textarea class='textarea' placeholder='输入你的影评内容...' name='textarea'></textarea>
-    <view class='btn'>
+    <textarea class='textarea' wx:if="{{commentType==0}}" placeholder='输入你的影评内容...' name='textarea'></textarea>
+    <view class='btn' wx:else>
       <image class='btn-icon' src='../../images/user-sel.png'></image>
       <view class='record'>录音</view>
     </view>
