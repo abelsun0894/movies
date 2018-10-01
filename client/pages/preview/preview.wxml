@@ -11,7 +11,7 @@
       <text>{{comment}}</text>
     </view>
   </scroll-view>
-  <view class='btn' style='margin:200rpx auto 150rpx;width:400rpx' wx:else >播放音频{{recordDuration}}s</view>
+  <view class='btn' style='margin:200rpx auto 150rpx;width:400rpx' bindtap='onTapRecord' wx:else >播放音频{{recordDuration}}s</view>
   <view class='btn-wrapper'>
     <navigator class='btn' open-type='navigateBack'>
       <image class='btn-icon' src='../../images/user-sel.png'></image>
