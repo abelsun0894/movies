@@ -14,7 +14,8 @@ Page({
     userInfo: null,
     commentType: null,
     recordInfo:null,
-    recordDuration: null
+    recordDuration: null,
+    recordCOSUrl: null
   },
 
   /**
@@ -32,27 +33,61 @@ Page({
     })
   },
 
+  //响应点击“发布影评”
   onTapSubmit(){
+    //上传文字评论或者音频
+    //如是音频，上传音频，获取地址
+    if (this.data.commentType === 1) {
+      let path = this.data.recordInfo.tempFilePath
+      wx.uploadFile({
+        url: config.service.uploadUrl,
+        filePath: path,
+        name: 'file',
+        success: res => {
+          console.log('upLoad record success res', res)
+          let data = JSON.parse(res.data).data
+          console.log('upLoad res data',data)
+          this.setData({
+            recordCOSUrl: data.imgUrl
+          })
+          //上传数据库
+          this.updateDatabase()
+        },
+        fail: res => {
+          console.log('upLoad record fail res',res)
+        }
+      })
+    }else if(this.data.commentType === 0){
+      //如是文字评论，上传文字
+      this.updateDatabase()
+    }
+  },
+
+  //上传数据库
+  updateDatabase(){
     qcloud.request({
       url: config.service.commentUrl,
       method: 'POST',
       data: {
         userInfo: this.data.userInfo,
-        commentType: 0,
+        commentType: this.data.commentType,
         comment: this.data.comment,
+        recordCOSUrl: this.data.recordCOSUrl,
         movieId: this.data.movieInfo.id
       },
-      success: res =>{
-        //console.log(res)
+      success: res => {
+        console.log('update database success',res)
         wx.redirectTo({
           url: '../list/list',
         })
       },
       fail: res => {
-        console.log('fail',res)
+        console.log('update database fail', res)
       }
     })
+
   },
+
 
   //响应点击播放音频按键
   onTapRecord(){

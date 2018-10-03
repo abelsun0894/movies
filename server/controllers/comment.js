@@ -9,7 +9,15 @@ module.exports = {
     let open_id = data.userInfo.openId
     let nickname = data.userInfo.nickname
     let logo_url = data.userInfo.logoUrl
+    let audio_url = data.recordCOSUrl
 
-    await DB.query('insert into comments(movie_id,open_id,nickname,logo_url,comment_type,words) values(?,?,?,?,?,?)',[movie_id,open_id,nickname,logo_url,comment_type,comment])
+    //如是文字评论
+    if(comment_type == 0){
+      await DB.query('insert into comments(movie_id,open_id,nickname,logo_url,comment_type,words) values(?,?,?,?,?,?)', [movie_id, open_id, nickname, logo_url, comment_type, comment])
+    }else if(comment_type == 1){
+      //如果是音频评论
+      await DB.query('insert into comments(movie_id,open_id,nickname,logo_url,comment_type,audio_url', [movie_id, open_id, nickname, logo_url, comment_type,audio_url])
+    }
+
   }
 }
