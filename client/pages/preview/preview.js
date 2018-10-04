@@ -42,6 +42,9 @@ Page({
       wx.uploadFile({
         url: config.service.uploadUrl,
         filePath: path,
+        header: {
+          'content-type': 'multipart/form-data'
+        },
         name: 'file',
         success: res => {
           console.log('upLoad record success res', res)
