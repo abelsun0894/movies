@@ -20,7 +20,7 @@ Page({
     this.getRandomMovieInfo()
     //模拟用户数据
     app.userInfo = { "nickname": "瓦伦西", "logoUrl": "https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg", "openId": "dfidfianwebebf" }
-    console.log(app.userInfo)
+    //console.log(app.userInfo)
   },
 
   //获取随机电影信息和影评信息
@@ -28,13 +28,13 @@ Page({
     qcloud.request({
       url: config.service.indexFilmUrl,
       success: res => {
-        console.log(res)
+        console.log('getRandomMovieInfo success res',res)
         this.setData({
           movieInfo: res.data.data[0]
         })
         //当前电影信息设置为app.movieInfo
         app.movieInfo = res.data.data[0]
-        console.log(this.data.movieInfo)
+        console.log('index page movie info',this.data.movieInfo)
         //获取评论设置app.comments&this.data.comment
         app.comments = res.data.data[1]
         this.setData({
@@ -42,7 +42,7 @@ Page({
         })
       },
       fail: res => {
-        console.log(res)
+        console.log('getRandomMovieInfo fail res',res)
       }
     })
   },

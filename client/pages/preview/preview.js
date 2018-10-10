@@ -76,12 +76,13 @@ Page({
         commentType: this.data.commentType,
         comment: this.data.comment,
         recordCOSUrl: this.data.recordCOSUrl,
-        movieId: this.data.movieInfo.id
+        movieId: this.data.movieInfo.id,
+        recordDuration: this.data.recordDuration
       },
       success: res => {
         console.log('update database success',res)
         wx.redirectTo({
-          url: '../list/list',
+          url: '../list/list?movieId='+this.data.movieInfo.id,
         })
       },
       fail: res => {

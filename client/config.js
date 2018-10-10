@@ -30,7 +30,10 @@ var config = {
         moviesInfoUrl: `${host}/weapp/moviesInfo`,
 
         //发布影评
-        commentUrl: `${host}/weapp/comment`
+        commentUrl: `${host}/weapp/comment`,
+
+        //获取某个电影所有影评
+        listUrl: `${host}/weapp/list`
     }
 };
 

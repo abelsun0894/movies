@@ -1,5 +1,7 @@
 // pages/list/list.js
 const app = getApp()
+const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
+const config = require('../../config.js')
 
 Page({
 
@@ -14,9 +16,37 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      comments: app.comments
+    //获取某个电影所有影评
+    this.getComments(app.movieInfo.id)
+  },
+
+  //获取某个电影所有影评
+  getComments(movieId){
+    qcloud.request({
+      url: config.service.listUrl,
+      data: {
+        movieId: movieId
+      },
+      success: res => {
+        console.log('getCommentList success',res)
+        this.setData({
+          comments: res.data.data
+        })
+        app.comments = res.data.data
+      },
+      fail: res => {
+        console.log('getCommentList fail',res)
+      }
     })
+  },
+
+  //响应点击播放音频按键
+  onTapRecord(options) {
+    console.log('onTapRecord options in list page',options)
+    let audio_url = options.currentTarget.dataset.url
+    let innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.src = audio_url
+    innerAudioContext.play()
   },
 
   /**

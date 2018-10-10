@@ -27,7 +27,7 @@ Page({
       url: config.service.moviesInfoUrl,
       success: res => {
         let data = res.data.data
-        console.log(data)
+        console.log('hot.js getMoviesInfo success data',data)
         this.setData({
           moviesInfo: data
         })
