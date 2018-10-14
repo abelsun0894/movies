@@ -77,7 +77,6 @@ Page({
       login: true,
       method: 'POST',
       data: {
-        userInfo: this.data.userInfo,
         commentType: this.data.commentType,
         comment: this.data.comment,
         recordCOSUrl: this.data.recordCOSUrl,
