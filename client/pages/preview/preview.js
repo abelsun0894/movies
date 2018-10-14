@@ -23,13 +23,17 @@ Page({
    */
   onLoad: function (options) {
     console.log(app.recordInfo)
+    let recordDuration = null
+    if (options.commentType == 1){
+      recordDuration = Math.trunc(app.recordInfo.duration / 1000)
+    }
     this.setData({
       movieInfo: app.movieInfo,
       comment: app.comment || null,
-      userInfo: app.userInfo,
+      userInfo: null,
       commentType: + options.commentType,
       recordInfo: app.recordInfo || null,
-      recordDuration: Math.trunc(app.recordInfo.duration / 1000)
+      recordDuration: recordDuration
     })
   },
 
@@ -70,6 +74,7 @@ Page({
   updateDatabase(){
     qcloud.request({
       url: config.service.commentUrl,
+      login: true,
       method: 'POST',
       data: {
         userInfo: this.data.userInfo,
@@ -111,7 +116,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    app.checkSession({
+      success: ({ userInfo }) => {
+        this.setData({
+          userInfo
+        })
+        console.log('checkSession success', this.data.userInfo)
+      },
+      error: () => {
+        wx.navigateTo({
+          url: '../login/login',
+        })
+        console.log('checkSession fail')
+      }
+    })
+
   },
 
   /**

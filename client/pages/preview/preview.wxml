@@ -3,8 +3,8 @@
   <image class='img-small' src='{{movieInfo.image}}'></image>
   <view class='title'>{{movieInfo.title}}</view>
   <view class='user-wrapper'>
-    <image class='user-icon' src='{{userInfo.logoUrl}}'></image>
-    <view class='name'>{{userInfo.nickname}}的影评</view>
+    <image class='user-icon' src='{{userInfo.avatarUrl}}'></image>
+    <view class='name'>{{userInfo.nickName}}的影评</view>
   </view>
   <scroll-view scroll-y wx:if="{{commentType==0}}">
     <view class='text-wrapper'>

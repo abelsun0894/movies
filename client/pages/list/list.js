@@ -42,7 +42,7 @@ Page({
 
   //响应点击播放音频按键
   onTapRecord(options) {
-    console.log('onTapRecord options in list page',options)
+    //console.log('onTapRecord options in list page',options)
     let audio_url = options.currentTarget.dataset.url
     let innerAudioContext = wx.createInnerAudioContext()
     innerAudioContext.src = audio_url

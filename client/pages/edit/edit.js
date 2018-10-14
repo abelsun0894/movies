@@ -1,5 +1,5 @@
 // pages/edit/edit.js
-const app = getApp()
+var app = getApp()
 const recorderManager = wx.getRecorderManager()
 
 Page({
@@ -9,7 +9,8 @@ Page({
    */
   data: {
     movieInfo: null,
-    commentType: null
+    commentType: null,
+    userInfo: null
   },
 
   /**
@@ -63,7 +64,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    app.checkSession({
+      success: ({ userInfo }) => {
+        this.setData({
+          userInfo
+        })
+        console.log('checkSession success',this.data.userInfo)
+      },
+      error: () => {
+        wx.navigateTo({
+          url: '../login/login',
+        })
+        console.log('checkSession fail')
+      }
+    })
   },
 
   /**

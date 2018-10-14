@@ -1,0 +1,6 @@
+<!--pages/login/login.wxml-->
+
+<view>
+  <button class='login-btn' wx:if='{{locationAuthType==0}}' open-type='getUserInfo' bindgetuserinfo='onTapLogin' type='primary'>微信登录</button>
+  <button class='login-btn' wx:else open-type='openSetting' bindopensetting='onTapLogin' type='primary'>授权登录</button>
+</view>

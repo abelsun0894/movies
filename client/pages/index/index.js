@@ -18,9 +18,6 @@ Page({
   onLoad: function (options) {
     //连接数据库获取随机电影信息和影评信息
     this.getRandomMovieInfo()
-    //模拟用户数据
-    app.userInfo = { "nickname": "瓦伦西", "logoUrl": "https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg", "openId": "dfidfianwebebf" }
-    //console.log(app.userInfo)
   },
 
   //获取随机电影信息和影评信息
