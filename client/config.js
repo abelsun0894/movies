@@ -33,7 +33,10 @@ var config = {
         commentUrl: `${host}/weapp/comment`,
 
         //获取某个电影所有影评
-        listUrl: `${host}/weapp/list`
+        listUrl: `${host}/weapp/list`,
+
+        //收藏影评
+        collectionUrl: `${host}/weapp/collection`
     }
 };
 

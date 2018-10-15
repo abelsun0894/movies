@@ -5,6 +5,6 @@
     <view class='name'>{{item.nickname}}</view>
   </view>
   <view class='content' wx:if="{{item.comment_type==0}}">{{item.words}}</view>
-  <view class='btn' style='margin:-20rpx auto' wx:else bindtap='onTapRecord' data-url='{{item.audio_url}}'>播放音频 {{item.record_duration}}s</view>
+  <view class='btn' style='margin:-20rpx auto' wx:else catchtap='onTapRecord' data-url='{{item.audio_url}}'>播放音频 {{item.record_duration}}s</view>
 </view>
 <navigator class='btn-index' open-type='redirect' url='../index/index'>回到首页</navigator>

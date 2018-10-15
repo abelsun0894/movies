@@ -42,6 +42,9 @@ router.get('/moviesInfo', controllers.moviesInfo.get),
 router.post('/comment',validationMiddleware,controllers.comment.post),
 
 //获取某个电影所有影评
-router.get('/list',controllers.list.get)
+router.get('/list',controllers.list.get),
+
+//收藏影评
+router.post('/collection',validationMiddleware,controllers.collection.post)
 
 module.exports = router
