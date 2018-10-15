@@ -1,5 +1,5 @@
 <!--pages/list/list.wxml-->
-<view class='item-wrapper' wx:for="{{comments}}" wx:key="id">
+<view class='item-wrapper' wx:for="{{comments}}" wx:key="id" data-index='{{index}}'  bindtap='onTapCommentItem'>
   <view class='user-wrapper'>
     <image class='icon' src='{{item.logo_url}}'></image>
     <view class='name'>{{item.nickname}}</view>

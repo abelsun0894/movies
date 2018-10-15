@@ -5,7 +5,7 @@
   </view>
   <view class='title'>{{movieInfo.title}}</view>
   <view wx:if='{{comments.length==0}}'>暂无评论</view>
-  <navigator class='comment-wrapper' wx:else url='../comment/comment'>
+  <navigator class='comment-wrapper' wx:else url='../comment/comment?index=0'>
     <image class='comment-img' src='{{comments[0].logo_url}}'></image>
     <view class='content'>{{comments[0].nickname}}给你推荐了一部电影</view>
   </navigator>

@@ -20,9 +20,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log('comment page onLoad options',options)
     this.setData({
       movieInfo: app.movieInfo,
-      comment: app.comments[0]
+      comment: app.comments[+options.index]
     })
   },
 

@@ -7,7 +7,8 @@
     <view class='name'>{{comment.nickname}}的影评</view>
   </view>
   <scroll-view class='scroll' scroll-y>
-    <view class='literal-content'>{{comment.words}}</view>
+    <view class='literal-content' wx:if="{{comment.comment_type==0}}">{{comment.words}}</view>
+    <view class='btn' style='margin:100rpx auto' wx:else bindtap='onTapRecord' data-url='{{item.audio_url}}'>播放音频 {{item.record_duration}}s</view>
   </scroll-view>
   <view class='btn-wrapper'>
     <view class='btn'>
