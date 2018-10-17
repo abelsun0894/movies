@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2018-10-03 14:25:16
+-- Generation Time: 2018-10-17 14:57:40
 -- 服务器版本： 5.7.18
 -- PHP Version: 5.6.30
 
@@ -47,6 +47,28 @@ INSERT INTO `cAppinfo` (`appid`, `secret`, `ip`, `login_duration`, `qcloud_appid
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `collection`
+--
+
+CREATE TABLE `collection` (
+  `id` int(10) NOT NULL,
+  `open_id` varchar(255) NOT NULL,
+  `comment_id` int(10) NOT NULL COMMENT '收藏的帖子id',
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '收藏时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 转存表中的数据 `collection`
+--
+
+INSERT INTO `collection` (`id`, `open_id`, `comment_id`, `time`) VALUES
+(1, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 1, '2018-10-15 15:35:36'),
+(2, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 6, '2018-10-15 17:10:30'),
+(3, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 6, '2018-10-17 14:56:53');
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `comments`
 --
 
@@ -59,6 +81,7 @@ CREATE TABLE `comments` (
   `comment_type` int(1) NOT NULL DEFAULT '0',
   `words` varchar(1023) CHARACTER SET utf8mb4 DEFAULT NULL,
   `audio_url` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `record_duration` int(10) DEFAULT NULL COMMENT '音频时长',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -66,14 +89,27 @@ CREATE TABLE `comments` (
 -- 转存表中的数据 `comments`
 --
 
-INSERT INTO `comments` (`id`, `movie_id`, `open_id`, `nickname`, `logo_url`, `comment_type`, `words`, `audio_url`, `time`) VALUES
-(1, 2, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 1, NULL, '\"https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1538573607855-arU_AxqM8.aac\"', '2018-10-01 00:17:38'),
-(3, 1, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个好看！', NULL, '2018-10-01 00:17:38'),
-(4, 3, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个也好看！3', NULL, '2018-10-01 00:17:38'),
-(5, 4, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个也好看！4', NULL, '2018-10-01 00:17:38'),
-(6, 5, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个也好看！5', NULL, '2018-10-01 00:17:38'),
-(7, 6, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个也好看！6', NULL, '2018-10-01 00:17:38'),
-(8, 3, 'dfidfianwebebf', '瓦伦西', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '东方 i 暗示对方', NULL, '2018-10-01 01:17:38');
+INSERT INTO `comments` (`id`, `movie_id`, `open_id`, `nickname`, `logo_url`, `comment_type`, `words`, `audio_url`, `record_duration`, `time`) VALUES
+(1, 2, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1538573607855-arU_AxqM8.aac', 3, '2018-10-01 00:17:38'),
+(3, 1, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个好看！', NULL, NULL, '2018-10-01 00:17:38'),
+(4, 3, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个也好看！3', NULL, NULL, '2018-10-01 00:17:38'),
+(5, 4, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个也好看！4', NULL, NULL, '2018-10-01 00:17:38'),
+(6, 5, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个也好看！5', NULL, NULL, '2018-10-01 00:17:38'),
+(7, 6, 'sdinfsindfisndinsf', '徐妍', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '这个也好看！6', NULL, NULL, '2018-10-01 00:17:38'),
+(8, 3, 'dfidfianwebebf', '瓦伦西', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 0, '东方 i 暗示对方', NULL, NULL, '2018-10-01 01:17:38'),
+(9, 7, 'dfidfianwebebf', '瓦伦西', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1538635295863-z8oYU6cpG.webm', 3, '2018-10-04 06:41:36'),
+(10, 9, 'dfidfianwebebf', '瓦伦西', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1538644916446-pkw8YVMlN.webm', 4, '2018-10-04 09:21:57'),
+(11, 3, 'dfidfianwebebf', '瓦伦西', 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/th.jpeg', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1539185985897-UCct196zF.webm', 4, '2018-10-10 15:39:46'),
+(12, 15, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'werwedsd212313', NULL, NULL, '2018-10-14 15:05:37'),
+(13, 15, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1539529624217-cjb4RyoCF.webm', 5, '2018-10-14 15:07:05'),
+(14, 14, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'cieshidiandfnnID那份思念对方 i 安\n迪士尼大姑娘似的你烦恼', NULL, NULL, '2018-10-17 14:14:12'),
+(15, 4, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'dfaidfianife\n123123\nadwewa', NULL, NULL, '2018-10-17 14:25:21'),
+(16, 4, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'difnasidnfandfis 的那份那时的风男的那份男的那份当你烦恼123123', NULL, NULL, '2018-10-17 14:25:50'),
+(17, 12, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1539787467138-94HVFn7W7.webm', 3, '2018-10-17 14:44:27'),
+(18, 2, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1539787645149-Ke0fCCKcm.webm', 5, '2018-10-17 14:47:25'),
+(19, 14, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1539787775542-tGGRI9Q4t.webm', 3, '2018-10-17 14:49:36'),
+(20, 13, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1539787836479-9ZsYhlrNL.webm', 3, '2018-10-17 14:50:37'),
+(21, 1, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'dsfaefd3842348df', NULL, NULL, '2018-10-17 14:56:25');
 
 -- --------------------------------------------------------
 
@@ -96,7 +132,7 @@ CREATE TABLE `cSessionInfo` (
 --
 
 INSERT INTO `cSessionInfo` (`open_id`, `uuid`, `skey`, `create_time`, `last_visit_time`, `session_key`, `user_info`) VALUES
-('oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'cf2e301c-d76b-4418-a216-fb7d180b14d9', 'f87310a8236df72d9e0a4b7a16a703c6abf4aac5', '2018-06-29 07:21:01', '2018-09-29 16:34:42', 'mtOqkpXtYYJYaYzlcGPQmw==', '{\"openId\":\"oMpRJ5P-QgpAhZ543yGNdXZuvH9s\",\"nickName\":\"abelsun_蚂蚁\",\"gender\":1,\"language\":\"zh_CN\",\"city\":\"Yantai\",\"province\":\"Shandong\",\"country\":\"China\",\"avatarUrl\":\"https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132\",\"watermark\":{\"timestamp\":1538238881,\"appid\":\"wx0087efcea2eeffa1\"}}');
+('oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'cf2e301c-d76b-4418-a216-fb7d180b14d9', '98d952d463771d94d69204ae10e364984ff2fda0', '2018-06-29 07:21:01', '2018-10-17 14:00:22', 'HJXRveUdlD02QWw0VFUCPA==', '{\"openId\":\"oMpRJ5P-QgpAhZ543yGNdXZuvH9s\",\"nickName\":\"abelsun_蚂蚁\",\"gender\":1,\"language\":\"zh_CN\",\"city\":\"Yantai\",\"province\":\"Shandong\",\"country\":\"China\",\"avatarUrl\":\"https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132\",\"watermark\":{\"timestamp\":1539784820,\"appid\":\"wx0087efcea2eeffa1\"}}');
 
 -- --------------------------------------------------------
 
@@ -139,6 +175,12 @@ INSERT INTO `movies` (`id`, `title`, `image`, `category`, `description`, `create
 --
 
 --
+-- Indexes for table `collection`
+--
+ALTER TABLE `collection`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
@@ -163,10 +205,15 @@ ALTER TABLE `movies`
 --
 
 --
+-- 使用表AUTO_INCREMENT `collection`
+--
+ALTER TABLE `collection`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- 使用表AUTO_INCREMENT `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- 使用表AUTO_INCREMENT `movies`
 --
