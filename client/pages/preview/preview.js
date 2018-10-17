@@ -88,6 +88,10 @@ Page({
         wx.redirectTo({
           url: '../list/list?movieId='+this.data.movieInfo.id,
         })
+        wx.showToast({
+          title: '评论成功',
+        })
+
       },
       fail: res => {
         console.log('update database fail', res)

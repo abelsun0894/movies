@@ -1,18 +1,21 @@
 <!--pages/my/my.wxml-->
 <form>
-  <picker name='picker' bindchange='pickerChange' range="{{['收藏的影评','发布的影评']}}">
-    <view class='specification'>收藏的影评 ▽</view>
+  <picker name='picker' bindchange='pickerChange' range="{{range}}">
+    <view class='specification'>{{range[index]}} ▽</view>
   </picker>
 </form>
 <view class='hot-wrapper'>
-  <view class='hot-movie-wrapper'>
-    <image class='hot-img' src='../../images/user-sel.png' mode='aspectFit'></image>
+  <view class='hot-movie-wrapper' wx:for="{{comments}}">
+    <image class='hot-img' src='{{item.image}}' mode='aspectFit'></image>
     <view class='hot-text-wrapper'>
-      <view class='hot-title'>复仇者联盟3:无限战争</view>
-      <view class='hot-type'>这里是影评摘要</view>
+      <view class='hot-title'>{{item.title}}</view>
+      <view class='hot-type' wx:if='{{item.comment_type==0}}'>{{item.words}}</view>
+      <view class='hot-type' wx:if='{{item.comment_type==1}}'>
+        <view class='btn' style='height:60rpx;' bindtap='onTapRecord' data-index="{{index}}">播放音频{{item.record_duration}}s</view>
+      </view>
       <view class='user-wrapper'>
-        <image class='user-icon' src='{{userInfo.avatarUrl}}'></image>
-        <view class='user-name'>{{userInfo.nickName}}</view>
+        <image class='user-icon' src='{{item.logo_url}}'></image>
+        <view class='user-name'>{{item.nickname}}</view>
       </view>
     </view>
   </view>

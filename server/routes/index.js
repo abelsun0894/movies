@@ -45,6 +45,9 @@ router.post('/comment',validationMiddleware,controllers.comment.post),
 router.get('/list',controllers.list.get),
 
 //收藏影评
-router.post('/collection',validationMiddleware,controllers.collection.post)
+router.post('/collection',validationMiddleware,controllers.collection.post),
+
+////获取收藏的影评或我的影评
+router.get('/getComments/:collectionORmyComments',validationMiddleware,controllers.getComments.get)
 
 module.exports = router

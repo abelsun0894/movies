@@ -35,10 +35,13 @@
   font-size: 35rpx;
   line-height: 49rpx;
   opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .btn-index{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 100rpx;

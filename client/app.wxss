@@ -64,6 +64,7 @@ page{
 
 .hot-wrapper{
   text-align: center;
+  margin-bottom: 150rpx;
 }
 
 .hot-movie-wrapper{

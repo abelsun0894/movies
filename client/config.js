@@ -36,7 +36,10 @@ var config = {
         listUrl: `${host}/weapp/list`,
 
         //收藏影评
-        collectionUrl: `${host}/weapp/collection`
+        collectionUrl: `${host}/weapp/collection`,
+
+        //获取收藏的影评或我的影评
+        getCommentsUrl: `${host}/weapp/getComments/`
     }
 };
 

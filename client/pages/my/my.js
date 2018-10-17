@@ -3,6 +3,8 @@ const app = getApp()
 const config = require('../../config.js')
 const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
 
+var collectionORmyComments
+
 Page({
 
   /**
@@ -10,8 +12,9 @@ Page({
    */
   data: {
     userInfo: null,
-    collection: null,
-    myComments: null
+    comments: null,
+    range: ['收藏的影评', '发布的影评'],
+    index: 0
   },
 
   /**
@@ -19,21 +22,44 @@ Page({
    */
   onLoad: function (options) {
     //获取收藏的影评
+    this.getComments(0)
   },
 
   //pickerChanged
   pickerChange(e){
-
+    console.log('pickerChange e in my page',e)
+    collectionORmyComments = + e.detail.value
+    this.setData({
+      index: collectionORmyComments
+    })
+    this.getComments(collectionORmyComments)
   },
 
-  //获取收藏的影评
-  getCollection(){
-
+  //获取收藏的影评或我的影评
+  getComments(collectionORmyComments){
+    qcloud.request({
+      url: config.service.getCommentsUrl+collectionORmyComments,
+      login: true,
+      success: res => {
+        console.log('getComments success res in my page',res)
+        this.setData({
+          comments: res.data.data
+        })
+      },
+      fail: res => {
+        console.log('getComments fail res in my page', res)
+      }
+    })
   },
 
-  //获取我的影评
-  getMyComments(){
-
+  //响应点击播放音频按键
+  onTapRecord(e) {
+    console.log(e)
+    let index = e.currentTarget.dataset.index
+    let innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.src = this.data.comments[index].audio_url
+    console.log('onTapRecord audio_url in my page',innerAudioContext.src)
+    innerAudioContext.play()
   },
 
   /**
