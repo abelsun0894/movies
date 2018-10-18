@@ -22,7 +22,7 @@ Page({
   },
 
   //获取所有影片信息
-  getMoviesInfo(){
+  getMoviesInfo(success){
     qcloud.request({
       url: config.service.moviesInfoUrl,
       success: res => {
@@ -31,6 +31,7 @@ Page({
         this.setData({
           moviesInfo: data
         })
+        success && success()
       }
     })
   },
@@ -79,7 +80,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.getMoviesInfo(() => {
+      wx.stopPullDownRefresh()
+      console.log('成功刷新，调用回调函数')
+    })
+    console.log('响应下拉动作')
+
   },
 
   /**
