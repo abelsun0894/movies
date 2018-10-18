@@ -15,7 +15,7 @@
     <image class='hot-btn-img' src='../../images/hot.png'></image>
     <view>热门</view>
   </navigator>
-  <navigator class='hot-btn' url='../my/my'>
+  <navigator class='hot-btn' open-type='switchTab' url='../collection/collection'>
     <image class='hot-btn-img' src='../../images/my.png'></image>
     <view>我的</view>
   </navigator>

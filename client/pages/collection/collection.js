@@ -19,22 +19,22 @@ Page({
    */
   onLoad: function (options) {
     //获取收藏的影评
-    this.getMyComments()
+    this.getCollectionComments()
   },
 
   //获取收藏的影评或我的影评
-  getMyComments(){
+  getCollectionComments(){
     qcloud.request({
-      url: config.service.getCommentsUrl+1,
+      url: config.service.getCommentsUrl+0,
       login: true,
       success: res => {
-        console.log('getMyComments success res in my page',res)
+        console.log('getCollectionComments success res in collection page',res)
         this.setData({
           comments: res.data.data
         })
       },
       fail: res => {
-        console.log('getMyComments fail res in my page', res)
+        console.log('getCollectionComments fail res in collection page', res)
       }
     })
   },
