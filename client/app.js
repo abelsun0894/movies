@@ -47,7 +47,7 @@ App({
     qcloud.login({
       success: result => {
         if (result) {
-          let userInfo = result
+          userInfo = result
           success && success({
             userInfo
           })
@@ -72,8 +72,7 @@ App({
         let data = result.data
 
         if (!data.code) {
-          let userInfo = data.data
-
+          userInfo = data.data
           success && success({
             userInfo
           })
@@ -118,13 +117,60 @@ App({
 
   //“写影评”
   addComment() {
-    wx.showActionSheet({
-      itemList: ["文字", "音频"],
-      success: res => {
-        console.log(res)
-        wx.navigateTo({
-          url: '../edit/edit?commentType=' + res.tapIndex,
+    console.log('app.js addComment()', this.movieInfo)
+    //判断是否登录
+    this.checkSession({
+      success:() => {
+        //获取所有影评
+        this.getComments((comments) => {
+          //判断是否已有评论
+          var commentIndex = -1
+          comments.forEach((element, index) => {
+            if (element.open_id == userInfo.openId) {
+              commentIndex = index
+            }
+          })
+          if (commentIndex >= 0) {
+            //已评论
+            wx.navigateTo({
+              url: '../comment/comment?index=' + commentIndex,
+            })
+            wx.showToast({
+              title: '您已评论',
+              icon: 'none'
+            })
+          } else {
+            //没有评论，选择评论形式
+            wx.showActionSheet({
+              itemList: ["文字", "音频"],
+              success: res => {
+                console.log(res)
+                wx.navigateTo({
+                  url: '../edit/edit?commentType=' + res.tapIndex,
+                })
+              }
+            })
+          }
         })
+      }
+    })
+  },
+
+  //获取某个电影所有影评
+  getComments(success) {
+    let movieId = this.movieInfo.id
+    qcloud.request({
+      url: config.service.listUrl,
+      data: {
+        movieId: movieId
+      },
+      success: res => {
+        console.log('getCommentList success', res)
+        comments = res.data.data
+        success && success(comments)
+      },
+      fail: res => {
+        console.log('getCommentList fail', res)
       }
     })
   },

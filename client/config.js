@@ -39,7 +39,8 @@ var config = {
         collectionUrl: `${host}/weapp/collection`,
 
         //获取收藏的影评或我的影评
-        getCommentsUrl: `${host}/weapp/getComments/`
+        getCommentsUrl: `${host}/weapp/getComments/`,
+        
     }
 };
 

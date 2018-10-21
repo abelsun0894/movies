@@ -31,7 +31,7 @@ Page({
         })
         //当前电影信息设置为app.movieInfo
         app.movieInfo = res.data.data[0]
-        console.log('index page movie info',this.data.movieInfo)
+        console.log('index page movie info',app.movieInfo)
         //获取评论设置app.comments&this.data.comment
         app.comments = res.data.data[1]
         this.setData({

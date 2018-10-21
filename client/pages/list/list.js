@@ -9,34 +9,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    comments:null
+    comments: null,
+    movieInfo: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      movieInfo: app.movieInfo
+    })
     //获取某个电影所有影评
-    this.getComments(app.movieInfo.id)
-  },
-
-  //获取某个电影所有影评
-  getComments(movieId){
-    qcloud.request({
-      url: config.service.listUrl,
-      data: {
-        movieId: movieId
-      },
-      success: res => {
-        console.log('getCommentList success',res)
-        this.setData({
-          comments: res.data.data
-        })
-        app.comments = res.data.data
-      },
-      fail: res => {
-        console.log('getCommentList fail',res)
-      }
+    app.getComments((comments) => {
+      this.setData({
+        comments
+      })
     })
   },
 

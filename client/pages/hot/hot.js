@@ -45,7 +45,7 @@ Page({
         app.movieInfo = element
       }
     })
-    console.log(app.movieInfo)
+    console.log('set app.movieInfo success in hot page',app.movieInfo)
   },
 
   /**
