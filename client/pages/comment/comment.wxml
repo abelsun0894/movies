@@ -13,7 +13,8 @@
   <view class='btn-wrapper'>
     <view class='btn' bindtap='onTapCollect'>
       <image class='btn-icon' src='../../images/user-sel.png'></image>
-      <view>收藏影评</view>
+      <view wx:if='{{isCollected}}'>取消收藏</view>
+      <view wx:else>收藏影评</view>
     </view>
     <view class='btn' bindtap='onTapAddComment'>
       <image class='btn-icon' src='../../images/user-sel.png'></image>

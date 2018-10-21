@@ -37,12 +37,14 @@ Page({
   },
 
   onTapMovie(option){
-    console.log(option)
+    console.log('onTapMovie in hot page option',option)
     let id = option.currentTarget.id
     let tempMoviesInfo = this.data.moviesInfo
     tempMoviesInfo.forEach((element) => {
       if(element.id == id){
         app.movieInfo = element
+        //获取此电影所有影评
+        app.getComments()
       }
     })
     console.log('set app.movieInfo success in hot page',app.movieInfo)

@@ -11,7 +11,8 @@ Page({
   data: {
     movieInfo: null,
     comment: null,
-    userInfo: null
+    userInfo: null,
+    isCollected: false
   },
 
   //响应点击“写影评”
@@ -23,32 +24,63 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log('comment page onLoad options',options)
+    console.log('comment page onLoad options',options,app.comments)
     this.setData({
       movieInfo: app.movieInfo,
       comment: app.comments[+options.index]
+    })
+    //查询是否已经收藏
+    qcloud.request({
+      url: config.service.isCollectedUrl + this.data.comment.id,
+      login: true,
+      success: res => {
+        console.log('get isCollected success', res)
+        let isCollected = res.data.data[0]['count(*)'] == 0 ? false : true
+        this.setData({
+          isCollected
+        })
+      }
     })
   },
 
   //响应点击收藏影评
   onTapCollect(){
-    qcloud.request({
-      url: config.service.collectionUrl,
-      login: true,
-      method: 'POST',
-      data: {
-        commentId: this.data.comment.id
-      },
-      success: res => {
-        console.log('onTapCollect success res in comment page',res)
-        wx.showToast({
-          title: '收藏成功！',
-        })
-      },
-      fail: res => {
-        console.log('onTapCollect fail res in comment page',res)
-      }
-    })
+    if(this.data.isCollected){
+      //取消收藏
+      qcloud.request({
+        url: config.service.isCollectedUrl + this.data.comment.id,
+        login: true,
+        method: 'POST',
+        success: res => {
+          console.log('取消收藏 success in comment page',res)
+        },
+        fail: res => {
+          console.log('取消收藏 fail in comment page',res)
+        }
+      })
+    } else {
+      //收藏影评写入数据库
+      qcloud.request({
+        url: config.service.collectionUrl,
+        login: true,
+        method: 'POST',
+        data: {
+          commentId: this.data.comment.id
+        },
+        success: res => {
+          console.log('onTapCollect success res in comment page', res)
+          wx.showToast({
+            title: '收藏成功！',
+          })
+          this.setData({
+            isCollected: true
+          })
+        },
+        fail: res => {
+          console.log('onTapCollect fail res in comment page', res)
+        }
+      })
+    }
   },
 
   //响应点击播放音频按键

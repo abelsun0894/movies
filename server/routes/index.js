@@ -50,4 +50,10 @@ router.post('/collection',validationMiddleware,controllers.collection.post),
 ////获取收藏的影评或我的影评
 router.get('/getComments/:collectionORmyComments',validationMiddleware,controllers.getComments.get)
 
+//查询是否已经收藏过
+router.get('/collection/:comment_id', validationMiddleware, controllers.collection.get),
+
+//取消收藏
+router.post('collection/:comment_id',validationMiddleware,controllers.collection.delete)
+
 module.exports = router

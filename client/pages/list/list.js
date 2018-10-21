@@ -18,13 +18,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      movieInfo: app.movieInfo
-    })
-    //获取某个电影所有影评
-    app.getComments((comments) => {
-      this.setData({
-        comments
-      })
+      movieInfo: app.movieInfo,
+      comments: app.comments
     })
   },
 
@@ -38,7 +33,7 @@ Page({
   },
 
   onTapCommentItem(options){
-    console.log(options)
+    console.log('onTapCommentItem ..index in list page',options.currentTarget.dataset.index)
     let index = options.currentTarget.dataset.index
     wx.navigateTo({
       url: '../comment/comment?index='+index,
