@@ -38,11 +38,14 @@ var config = {
         //收藏影评
         collectionUrl: `${host}/weapp/collection`,
 
-        //查询是否已经收藏过/取消收藏
+        //查询是否已经收藏过
         isCollectedUrl: `${host}/weapp/collection/`,
 
         //获取收藏的影评或我的影评
         getCommentsUrl: `${host}/weapp/getComments/`,
+
+        //取消收藏
+        cancelCollectUrl: `${host}/weapp/cancelCollect/`,
         
     }
 };

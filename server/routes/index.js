@@ -54,6 +54,6 @@ router.get('/getComments/:collectionORmyComments',validationMiddleware,controlle
 router.get('/collection/:comment_id', validationMiddleware, controllers.collection.get),
 
 //取消收藏
-router.post('collection/:comment_id',validationMiddleware,controllers.collection.delete)
+router.post('cancelCollect/:comment_id',validationMiddleware,controllers.cancelCollect.post)
 
 module.exports = router

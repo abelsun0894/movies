@@ -39,6 +39,9 @@ Page({
         this.setData({
           isCollected
         })
+      },
+      fail: res => {
+        console.log('get isCollected fail', res)
       }
     })
   },
@@ -48,7 +51,7 @@ Page({
     if(this.data.isCollected){
       //取消收藏
       qcloud.request({
-        url: config.service.isCollectedUrl + this.data.comment.id,
+        url: config.service.cancelCollectUrl + this.data.comment.id,
         login: true,
         method: 'POST',
         success: res => {

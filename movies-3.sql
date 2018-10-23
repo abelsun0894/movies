@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2018-10-17 14:57:40
+-- Generation Time: 2018-10-23 13:31:10
 -- 服务器版本： 5.7.18
 -- PHP Version: 5.6.30
 
@@ -64,7 +64,9 @@ CREATE TABLE `collection` (
 INSERT INTO `collection` (`id`, `open_id`, `comment_id`, `time`) VALUES
 (1, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 1, '2018-10-15 15:35:36'),
 (2, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 6, '2018-10-15 17:10:30'),
-(3, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 6, '2018-10-17 14:56:53');
+(3, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 6, '2018-10-17 14:56:53'),
+(5, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 7, '2018-10-21 16:53:37'),
+(6, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 8, '2018-10-22 13:18:04');
 
 -- --------------------------------------------------------
 
@@ -132,7 +134,7 @@ CREATE TABLE `cSessionInfo` (
 --
 
 INSERT INTO `cSessionInfo` (`open_id`, `uuid`, `skey`, `create_time`, `last_visit_time`, `session_key`, `user_info`) VALUES
-('oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'cf2e301c-d76b-4418-a216-fb7d180b14d9', '98d952d463771d94d69204ae10e364984ff2fda0', '2018-06-29 07:21:01', '2018-10-17 14:00:22', 'HJXRveUdlD02QWw0VFUCPA==', '{\"openId\":\"oMpRJ5P-QgpAhZ543yGNdXZuvH9s\",\"nickName\":\"abelsun_蚂蚁\",\"gender\":1,\"language\":\"zh_CN\",\"city\":\"Yantai\",\"province\":\"Shandong\",\"country\":\"China\",\"avatarUrl\":\"https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132\",\"watermark\":{\"timestamp\":1539784820,\"appid\":\"wx0087efcea2eeffa1\"}}');
+('oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'cf2e301c-d76b-4418-a216-fb7d180b14d9', '4ad16fe6bf5e10a2a693f874f479a9bc05acfc9b', '2018-06-29 07:21:01', '2018-10-23 13:24:49', 'fNM/DLTfSoa2TJf2BLtsTA==', '{\"openId\":\"oMpRJ5P-QgpAhZ543yGNdXZuvH9s\",\"nickName\":\"abelsun_蚂蚁\",\"gender\":1,\"language\":\"zh_CN\",\"city\":\"Yantai\",\"province\":\"Shandong\",\"country\":\"China\",\"avatarUrl\":\"https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132\",\"watermark\":{\"timestamp\":1540301087,\"appid\":\"wx0087efcea2eeffa1\"}}');
 
 -- --------------------------------------------------------
 
@@ -208,7 +210,7 @@ ALTER TABLE `movies`
 -- 使用表AUTO_INCREMENT `collection`
 --
 ALTER TABLE `collection`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- 使用表AUTO_INCREMENT `comments`
 --
