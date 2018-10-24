@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2018-10-24 13:49:26
+-- Generation Time: 2018-10-24 14:31:41
 -- 服务器版本： 5.7.18
 -- PHP Version: 5.6.30
 
@@ -110,7 +110,13 @@ INSERT INTO `comments` (`id`, `movie_id`, `open_id`, `nickname`, `logo_url`, `co
 (18, 2, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1539787645149-Ke0fCCKcm.webm', 5, '2018-10-17 14:47:25'),
 (19, 14, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1539787775542-tGGRI9Q4t.webm', 3, '2018-10-17 14:49:36'),
 (20, 13, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1539787836479-9ZsYhlrNL.webm', 3, '2018-10-17 14:50:37'),
-(21, 1, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'dsfaefd3842348df', NULL, NULL, '2018-10-17 14:56:25');
+(21, 1, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'dsfaefd3842348df', NULL, NULL, '2018-10-17 14:56:25'),
+(22, 5, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'difajisdfnandf\ndfiuabsdfasdhf', NULL, NULL, '2018-10-24 14:02:16'),
+(23, 6, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'ifansidnfnadf', NULL, NULL, '2018-10-24 14:10:26'),
+(24, 11, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'sdsnfisdfiasdfi\nsdfiahsdfhasfd', NULL, NULL, '2018-10-24 14:11:02'),
+(25, 8, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'diaindfneinsdf\n3849193491934', NULL, NULL, '2018-10-24 14:16:36'),
+(26, 9, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 0, 'difjaisdfiajsd\n39394913942934\nsdijfaisjdfasdf', NULL, NULL, '2018-10-24 14:24:11'),
+(27, 10, 'oMpRJ5P-QgpAhZ543yGNdXZuvH9s', 'abelsun_蚂蚁', 'https://wx.qlogo.cn/mmopen/vi_32/DBgpuW1TOzZZQdwbiaTQX1BKjSkotGL2cZmbUvgeC2lHnZyIU6DCsJ3lbNFB4GIDfZ9ibd0cicXYeia2SOCc6wNiatQ/132', 1, NULL, 'https://qcloudtest-1256761953.cos.ap-guangzhou.myqcloud.com/movies/1540391135280-png0h2LwJ.webm', 4, '2018-10-24 14:25:35');
 
 -- --------------------------------------------------------
 
@@ -209,12 +215,12 @@ ALTER TABLE `movies`
 -- 使用表AUTO_INCREMENT `collection`
 --
 ALTER TABLE `collection`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- 使用表AUTO_INCREMENT `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- 使用表AUTO_INCREMENT `movies`
 --
