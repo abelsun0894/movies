@@ -85,7 +85,7 @@ Page({
       },
       success: res => {
         console.log('update database success',res)
-        wx.redirectTo({
+        wx.reLaunch({
           url: '../list/list?movieId='+this.data.movieInfo.id,
         })
         wx.showToast({

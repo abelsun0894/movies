@@ -56,6 +56,14 @@ Page({
         method: 'POST',
         success: res => {
           console.log('取消收藏 success in comment page',res)
+          if (res.data.data.affectedRows){
+            this.setData({
+              isCollected: false
+            })
+            wx.showToast({
+              title: '已取消收藏',
+            })
+          }
         },
         fail: res => {
           console.log('取消收藏 fail in comment page',res)

@@ -166,7 +166,7 @@ App({
       },
       success: res => {
         console.log('getCommentList success', res)
-        this.comments = res.data.data
+        comments = res.data.data
         success && success(comments)
       },
       fail: res => {
